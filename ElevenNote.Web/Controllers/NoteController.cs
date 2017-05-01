@@ -21,6 +21,11 @@ namespace ElevenNote.Web.Controllers
             return View(model);
         }
 
+        public ActionResult Create()
+        {
+            return View();
+        }
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create(NoteCreate model)
@@ -30,14 +35,28 @@ namespace ElevenNote.Web.Controllers
                 return View(model);
             }
 
+            var service = CreateNoteService();
+
+            if (service.CreateNote(model))
+            {
+                //Using TempData to store data in the session.
+                //When you read data from there, it removes it from the session.
+                TempData["SaveResult"] = "Your note was created.";
+                return RedirectToAction("Index");
+            }
+           
+            ModelState.AddModelError("", "Note could not be created.");
+
+            //If it fails we go back to the model
+            return View(model);
+        }
+
+        private NoteService CreateNoteService()
+        {
             var userId = Guid.Parse(User.Identity.GetUserId());
             var service = new NoteService(userId);
-            service.CreateNote(model);
-
-            return RedirectToAction("Index");
-
+            return service;
         }
-        
     }
 
   
