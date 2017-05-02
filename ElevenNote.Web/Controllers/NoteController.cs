@@ -9,9 +9,9 @@ using Microsoft.AspNet.Identity;
 
 namespace ElevenNote.Web.Controllers
 {
+    [Authorize]
     public class NoteController : Controller
     {
-        [Authorize]
         public ActionResult Index()
         {
             var userId = Guid.Parse(User.Identity.GetUserId());
@@ -30,10 +30,7 @@ namespace ElevenNote.Web.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(NoteCreate model)
         {
-            if (!ModelState.IsValid)
-            {
-                return View(model);
-            }
+            if (!ModelState.IsValid) return View(model);
 
             var service = CreateNoteService();
 
@@ -41,7 +38,7 @@ namespace ElevenNote.Web.Controllers
             {
                 //Using TempData to store data in the session.
                 //When you read data from there, it removes it from the session.
-                TempData["SaveResult"] = "Your note was created.";
+                TempData["SaveResult"] = "Your note was created!";
                 return RedirectToAction("Index");
             }
            
@@ -88,7 +85,7 @@ namespace ElevenNote.Web.Controllers
 
             if (service.UpdateNote(model))
             {
-                TempData["SaveResult"] = "Your note was updated";
+                TempData["SaveResult"] = "Your note was updated!";
                 return RedirectToAction("Index");
             }
             ModelState.AddModelError("", "Your note could not be updated.");
@@ -110,7 +107,7 @@ namespace ElevenNote.Web.Controllers
             var service = CreateNoteService();
             //TODO: Handle failure
             service.DeleteNote(id);
-            TempData["SaveResult"] = "Your note was deleted";
+            TempData["SaveResult"] = "Your note was deleted!";
             return RedirectToAction("Index");
         }
 

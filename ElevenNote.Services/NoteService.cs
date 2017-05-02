@@ -23,7 +23,7 @@ namespace ElevenNote.Services
         public bool CreateNote(NoteCreate model)
         {
             var entity =
-                new Note()
+                new Note
                 {
                     OwnerId = _userId,
                     Title = model.Title,
@@ -58,7 +58,8 @@ namespace ElevenNote.Services
                         {
                             NoteId = e.NoteId,
                             Title = e.Title,
-                            CreatedUTC = e.CreatedUtc
+                            IsStarred = e.IsStarred,
+                            CreatedUtc = e.CreatedUtc
                         }
                     );
                 return query.ToArray();
@@ -79,6 +80,7 @@ namespace ElevenNote.Services
                         NoteId = entity.NoteId,
                         Title = entity.Title,
                         Content = entity.Content,
+                        IsStarred = entity.IsStarred,
                         CreatedUtc = entity.CreatedUtc,
                         ModifiedUtc = entity.ModifiedUtc
                     };
@@ -95,6 +97,7 @@ namespace ElevenNote.Services
                         .Single(e => e.NoteId == model.NoteId && e.OwnerId == _userId);
                 entity.Title = model.Title;
                 entity.Content = model.Content;
+                entity.IsStarred = model.IsStarred;
                 entity.ModifiedUtc = DateTimeOffset.UtcNow;
 
                 return ctx.SaveChanges() == 1;
