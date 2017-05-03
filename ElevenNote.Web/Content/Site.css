@@ -1,12 +1,61 @@
 ﻿body {
     padding-top: 50px;
     padding-bottom: 20px;
+    background-color: tan;
+    color: white;
+    background-image: url(img/background-photo.jpeg);
 }
 
 /* Set padding to keep content from hitting the edges */
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
+}
+
+.jumbotron {
+    background-image: url(img/header-photo.jpeg);
+    color: white;
+    font-size: 80px;
+    font-weight: bold;
+    text-align: center;
+}
+
+#j-header {
+    font-size: 100px;
+    background-color: black;
+    opacity: 0.75;
+    font-family: Indie Flower;
+}
+
+#services {
+    background-color: white;
+    opacity: 0.65;
+    height: 400px;
+    color: black;
+    border-radius: 20px;
+}
+
+#price {
+    margin-top: 30px; 
+    background-color: white;
+    opacity: 0.65;
+    height: 400px;
+    color: black;
+    border-radius: 20px;
+}
+
+#faqs {
+    margin-top: 30px;
+    background-color: white;
+    opacity: 0.65;
+    height: 400px;
+    color: black;
+    border-radius: 20px;
+}
+.section-heading {
+    font-size: 90px;
+    font-family: Indie Flower;
+    margin: 0px 0px 0px 0px;
 }
 
 /* Override the default bootstrap behavior where horizontal description lists 
@@ -21,4 +70,9 @@ input,
 select,
 textarea {
     max-width: 280px;
+}
+
+.footer {
+    background-color: black;
+    opacity: 0.5;
 }
