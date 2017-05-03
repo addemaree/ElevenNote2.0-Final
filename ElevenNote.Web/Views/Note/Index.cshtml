@@ -1,18 +1,19 @@
 ﻿@model IEnumerable<ElevenNote.Models.NoteListItem>
 
 @{
+    Layout = "~/Views/Shared/_SimpleLayout.cshtml";
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
-
-<div class="alert alert-success fade in" role="alert">
-    @ViewBag.SaveResult
-    <button type="button" class="close" data-dismiss="alert">
-        <span>&times;</span>
-    </button>
+<div class="container" id="body-div">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-4 col-sm-8 col-sm-offset-2">
+            <div class="form-title">
+                <h2 id="sign-in-heading"><a href="/" style="text-decoration: none; color: white;">Notes</a></h2>
+            </div>
+        </div>
+    </div>
 </div>
-
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>

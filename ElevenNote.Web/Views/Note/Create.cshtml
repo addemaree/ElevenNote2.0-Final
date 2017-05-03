@@ -1,19 +1,16 @@
 ﻿@model ElevenNote.Models.NoteCreate
 
 @{
+    Layout = "~/Views/Shared/_Layout.cshtml";
     ViewBag.Title = "Create";
 }
 
-<h2>Create</h2>
-
-
+<h2 class="page-heading">Create a New Note:</h2>
 @using (Html.BeginForm()) 
 {
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>NoteCreate</h4>
-        <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
             @Html.LabelFor(model => model.Title, htmlAttributes: new { @class = "control-label col-md-2" })
@@ -39,7 +36,6 @@
     </div>
 }
 
-<div>
     @Html.ActionLink("Back to List", "Index")
 </div>
 
