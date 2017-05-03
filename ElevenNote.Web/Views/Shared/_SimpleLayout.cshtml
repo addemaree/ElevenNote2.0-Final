@@ -1,0 +1,89 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>@ViewBag.Title - Scribbler</title>
+    @*@Styles.Render("~/Content/css")
+        @Scripts.Render("~/bundles/modernizr")*@
+    @Styles.Render("~/Content/css/bootstrap.css")
+    @Styles.Render("~/Content/css/Site.css")
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="/Content/Site.css" rel="stylesheet">
+    <link href="css/ElevenNote.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+
+</head>
+
+<body id="page-top" class="index">
+
+    <!-- Header -->
+    <div class="container">
+        <div class="logo-xl">
+            
+        </div>
+    </div>
+
+    @RenderBody()
+    <hr/>
+    <footer class="simple-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <span class="copyright">Copyright &copy; @DateTime.Now.Year - Scribbler All Rights Reserved</span>
+                </div>
+                <div class="col-md-4">
+                    <ul class="list-inline social-buttons" style="padding-left: 17%;">
+                        <li>
+                            <a href="#"><i class="fa fa-twitter fa-3x"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-facebook fa-3x"></i></a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/addemaree/ElevenNote2.0-Final"><i class="fa fa-github-alt fa-3x"></i></a>
+                        </li>
+                    </ul>
+                    <p style="margin-top: 20px; padding-left: 12%;"><a href="https://github.com/addemaree" target="_blank">Powered by Adam Demaree</a></p>
+                </div>
+                <div class="col-md-4">
+                    <ul class="list-inline quicklinks">
+                        <li>
+                            <a href="#">Privacy Policy</a>
+                        </li>
+                        <li>
+                            <a href="#">Terms of Use</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+@Scripts.Render("~/bundles/js/jquery")
+@Scripts.Render("~/bundles/js/bootstrap.min.js")
+@RenderSection("scripts", required: false)
+
+</body>
+</html>

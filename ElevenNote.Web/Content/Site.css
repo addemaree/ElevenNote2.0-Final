@@ -55,7 +55,18 @@
 .section-heading {
     font-size: 90px;
     font-family: Indie Flower;
-    margin: 0px 0px 0px 0px;
+}
+
+/*Log In Page*/
+
+#sign-in-heading {
+    font-size: 100px;
+    font-family: Indie Flower;
+    margin: auto;
+  
+}
+#sign-in-subheading {
+    font-size: 50px;
 }
 
 /* Override the default bootstrap behavior where horizontal description lists 
