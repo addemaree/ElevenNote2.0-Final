@@ -26,6 +26,7 @@ namespace ElevenNote.Web.Controllers
             return View();
         }
 
+        [ValidateInput(false)]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create(NoteCreate model)
