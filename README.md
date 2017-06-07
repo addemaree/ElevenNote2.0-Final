@@ -1,11 +1,12 @@
-# ElevenNote
-ElevenNote is a web note taking application that is designed for the everyday user.
+# Scribbler
+Scribbler is my ElevenNote application in a 2.0 version. This application is a lot more user friendly because of the UI/UX additions that were made.
 
 ## What is included in the Application:
 * MVC
 * Web API
 * Javascript/Ajax
 * HTML
+* CSS/Bootstrap
 * Razor
 * Authentication
 * Validation
